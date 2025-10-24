@@ -4,18 +4,47 @@
   box-sizing: border-box;
 }
 :root {
-  --primary-color: hsl(228, 45%, 44%);
-  --secondary-color: hsl(0, 0%, 100%);
-  --bg-color: hsl(230, 100%, 99%);
-  --font-color: hsl(228, 12%, 22%);
-  --border-color: hsl(228, 12%, 90%);
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+
+  --gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+
+  font-family: "Inconsolata", monospace;
 }
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--primary-color);
-  color: var(--font-color);
+  background: url("../assets/images/background-desktop.png") no-repeat center
+    top/cover;
+  color: var(--neutral-0);
 }
+header {
+  margin-inline: auto;
+  font-size: 20px;
+  width: 35rem;
+  text-align: center;
+
+  h1 {
+    margin-block: 2rem 1rem;
+  }
+  img {
+    max-width: 200px;
+  }
+  p {
+    font-size: 14px;
+    color: var(--neutral-300);
+  }
+}
+form {
+  margin-inline: auto;
+  border: red 1px solid;
+  width: 20rem;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;

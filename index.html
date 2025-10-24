@@ -33,17 +33,25 @@
   </header>
   <main>
     <form action="#" method="post" enctype="multipart/form-data">
-      Upload Avatar
-      Drag and drop or click to upload
-      Upload your photo (JPG or PNG, max size: 500KB).
+      <label for="">
+        Upload Avatar
+      </label>
+      <div>
+        Drag and drop or click to upload
+        <input type="file" accept=".jpg, .png" size="500kb">
+        Upload your photo (JPG or PNG, max size: 500KB).
+      </div>
 
-      Full Name
+      <label for="full-name">Full Name</label>
+      <input id="full-name" type="text">
 
-      Email Address
-      example@email.com
+      <label for="">Email Address</label>
+      <input id="email" type="text" placeholder="example@email.com">
 
-      GitHub Username
-      @yourusername
+
+      <label for="github-email">GitHub Username</label>
+      <input id="github-email" type="text" placeholder="@yourusername">
+
 
       <button>
         Generate My Ticket

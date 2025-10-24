@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: hsl(228, 45%, 44%);
+  --secondary-color: hsl(0, 0%, 100%);
+  --bg-color: hsl(230, 100%, 99%);
+  --font-color: hsl(228, 12%, 22%);
+  --border-color: hsl(228, 12%, 90%);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

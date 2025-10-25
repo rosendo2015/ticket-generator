@@ -13,8 +13,6 @@
   --orange-500: hsl(7, 88%, 67%);
   --orange-700: hsl(7, 71%, 60%);
 
-  --gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
-
   font-family: "Inconsolata", monospace;
 }
 body {
@@ -24,22 +22,39 @@ body {
   color: var(--neutral-0);
 }
 header {
-  margin-inline: auto;
   margin-block: 1rem 2rem;
+  margin-inline: auto;
+  text-align: center;
+  img {
+    width: 200px;
+  }
+}
+.hero {
+  margin-inline: auto;
   font-size: 20px;
   width: 35rem;
   text-align: center;
-
   h1 {
     margin-block: 2rem 1rem;
   }
-  img {
-    max-width: 200px;
-  }
   p {
+    margin-inline: auto;
     font-size: 14px;
     color: var(--neutral-300);
+    margin-bottom: 3rem;
   }
+  .hero-detail {
+    line-height: 20px;
+    width: 20rem;
+  }
+  span {
+    color: var(--orange-700);
+  }
+}
+.gradient-text {
+  background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 form {
   margin-inline: auto;
@@ -80,4 +95,7 @@ form {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+.hide {
+  display: none;
 }

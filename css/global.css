@@ -16,6 +16,7 @@
   font-family: "Inconsolata", monospace;
 }
 body {
+  min-height: 100vh;
   background: url("../assets/images/background-desktop.png") no-repeat center
     top/cover;
   font-family: "Inconsolata", monospace;
@@ -58,7 +59,7 @@ header {
 }
 form {
   margin-inline: auto;
-
+  margin-block: 1rem 3rem;
   width: 20rem;
   label {
     font-size: 14px;
@@ -88,13 +89,102 @@ form {
     cursor: pointer;
   }
 }
+/* Ticket styles */
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+.ticket {
+  position: relative;
+  margin-inline: auto;
+  background: linear-gradient(135deg, #2c234d, #3a2d6d);
+  color: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
-.attribution a {
-  color: hsl(228, 45%, 44%);
+
+.ticket-header {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-size: 1rem;
+}
+
+.event-info h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.event-info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.ticket-number {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: bold;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.ticket-body {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+
+  margin-right: 0.5rem;
+}
+
+.speaker-info h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.speaker-info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #ccc;
+}
+.ticket-tag {
+  height: 100%;
+  width: 70px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ffffff10;
+  backdrop-filter: blur(6px);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+  border-left: 2px dashed #aaa;
+}
+footer {
+  width: 100%;
+  text-align: center;
+  bottom: 10px;
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
 }
 .hide {
   display: none;

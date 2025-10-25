@@ -3,69 +3,82 @@
   padding: 0;
   box-sizing: border-box;
 }
-:root {
-  --neutral-0: hsl(0, 0%, 100%);
-  --neutral-300: hsl(252, 6%, 83%);
-  --neutral-500: hsl(245, 15%, 58%);
-  --neutral-700: hsl(245, 19%, 35%);
-  --neutral-900: hsl(248, 70%, 10%);
 
-  --orange-500: hsl(7, 88%, 67%);
-  --orange-700: hsl(7, 71%, 60%);
+:root {
+  --neutral-0: #ffffff;
+  --neutral-300: #d2d1d6;
+  --neutral-500: #8784a4;
+  --neutral-700: #4b486a;
+  --neutral-900: #0c082b;
+
+  --orange-500: #f57261;
+  --orange-700: #e16151;
 
   font-family: "Inconsolata", monospace;
 }
+
 body {
-  min-height: 100vh;
   background: url("../assets/images/background-desktop.png") no-repeat center
     top/cover;
   font-family: "Inconsolata", monospace;
   color: var(--neutral-0);
 }
+
 header {
-  margin-block: 1rem 2rem;
+  margin-block: 1.5rem 2rem;
   margin-inline: auto;
   text-align: center;
+
   img {
     width: 200px;
   }
 }
-.hero {
+
+.hero,
+.hero-top {
   margin-inline: auto;
   font-size: 20px;
   width: 35rem;
   text-align: center;
+
   h1 {
-    margin-block: 2rem 1rem;
+    margin-block: 3rem 1.5rem;
   }
+
   p {
     margin-inline: auto;
     font-size: 14px;
     color: var(--neutral-300);
     margin-bottom: 3rem;
   }
+
   .hero-detail {
     line-height: 20px;
     width: 20rem;
   }
+
   span {
     color: var(--orange-700);
   }
 }
+
 .gradient-text {
   background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 form {
   margin-inline: auto;
   margin-block: 1rem 3rem;
   width: 20rem;
+
   label {
     font-size: 14px;
     margin-block: 1rem 0.5rem;
     display: block;
   }
+
   input {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -74,7 +87,43 @@ form {
     border: 1px solid var(--neutral-500);
     background-color: hsla(245, 19%, 35%, 0.249);
     border-radius: 0.5rem;
+    color: var(--neutral-0);
   }
+
+  .dropzone {
+    border: 2px dashed var(--neutral-700);
+    border-radius: 0.5rem;
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+    position: relative;
+    background-color: hsla(245, 19%, 35%, 0.249);
+
+    & input[type="file"] {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      opacity: 0;
+    }
+
+    & img {
+      width: 40px;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: hsla(245, 19%, 35%, 0.504);
+      padding: 8px;
+    }
+
+    & p {
+      color: var(--neutral-500);
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+
   button {
     margin-top: 1.05rem;
     border-radius: 0.5rem;
@@ -89,6 +138,7 @@ form {
     cursor: pointer;
   }
 }
+
 /* Ticket styles */
 
 .ticket {
@@ -155,6 +205,7 @@ form {
   font-size: 14px;
   color: #ccc;
 }
+
 .ticket-tag {
   height: 100%;
   width: 70px;
@@ -174,16 +225,40 @@ form {
   color: #fff;
   border-left: 2px dashed #aaa;
 }
+
 footer {
   width: 100%;
   text-align: center;
   bottom: 10px;
+
   .attribution {
     font-size: 11px;
     text-align: center;
   }
+
   .attribution a {
     color: hsl(228, 45%, 44%);
+  }
+}
+.error,
+.errorDragOrange {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 12px;
+  span {
+    color: var(--orange-700);
+  }
+}
+.errorDragWhite {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  font-size: 12px;
+  span {
+    color: var(--neutral-0);
   }
 }
 .hide {

@@ -15,7 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/index.css">
+  <style>
 
+  </style>
 
 </head>
 
@@ -25,8 +27,8 @@
   <header>
     <img src="assets/images/logo-full.svg" alt="logo">
   </header>
-  <main class="hide">
-    <div class="hero">
+  <main class="form-info">
+    <div class="hero-top">
       <h1>
         Your Journey to Coding Conf 2025 Starts Here!
       </h1>
@@ -35,24 +37,52 @@
       </p>
     </div>
     <form action="#" method="post" enctype="multipart/form-data">
-      <label for="">
-        Upload Avatar
-      </label>
-      <div>
-        Drag and drop or click to upload
-        <input type="file" accept=".jpg, .png" size="500kb">
-        Upload your photo (JPG or PNG, max size: 500KB).
+      <div class="droparea-wrapper">
+        <label for="avatar-photo">
+          Upload Avatar
+        </label>
+        <div class="dropzone">
+
+          <input id="avatar-photo" type="file" accept=".jpg, .png" size="500kb">
+          <img id="dropzone-preview" src="assets/images/icon-upload.svg" alt="">
+          <p>
+            Drag and drop or click to upload
+          </p>
+        </div>
+        <div class="errorDragWhite">
+          <img src="assets/images/icon-info-white.svg" alt="">
+          <span>
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </span>
+        </div>
+        <div class="errorDragOrange hide">
+          <img src="assets/images/icon-info-orange.svg" alt="">
+          <span>
+            Upload your photo (JPG or PNG, max size: 500KB).
+          </span>
+        </div>
       </div>
 
       <label for="full-name">Full Name</label>
       <input id="full-name" type="text">
+      <div class="error errorName hide">
+        <img src="assets/images/icon-info-orange.svg" alt="">
+        <span>Prencha com um nome válido!</span>
+      </div>
 
       <label for="">Email Address</label>
       <input id="email" type="text" placeholder="example@email.com">
-
+      <div class="error errorEmail hide">
+        <img src="assets/images/icon-info-orange.svg" alt="">
+        <span>Prencha com um email válido!</span>
+      </div>
 
       <label for="github-email">GitHub Username</label>
       <input id="github-email" type="text" placeholder="@yourusername">
+      <div class="error erroGit hide">
+        <img src="assets/images/icon-info-orange.svg" alt="">
+        <span>Prencha com sua rede social válida!</span>
+      </div>
 
 
       <button>
@@ -60,19 +90,17 @@
       </button>
     </form>
   </main>
-
-
-
   <!-- Form ends -->
 
   <!-- Generated tickets starts -->
-  <div class="Generated">
+  <div class="Generated hide">
     <div class="hero">
       <h1>
-        Congrats, <span class="gradient-text">Jonatan Kristof!</span> Your ticket is ready.
+        Congrats, <span id="ticket-name" class="gradient-text">Jonatan Kristof!</span> Your ticket is ready.
       </h1>
       <p class="hero-detail">
-        We've emailed your ticket to <span>jonatan@email.com</span> and will send updates in the run up to the event.
+        We've emailed your ticket to <span id="ticket-email">jonatan@email.com</span> and will send updates in the run
+        up to the event.
       </p>
     </div>
 
@@ -88,10 +116,10 @@
       </div>
 
       <div class="ticket-body">
-        <img src="assets/images/image-avatar.jpg" alt="Jonatan Kristof" class="profile-img">
+        <img id="ticket-avatar" src="assets/images/image-avatar.jpg" alt="Jonatan Kristof" class="profile-img">
         <div class="speaker-info">
-          <h2>Jonatan Kristof</h2>
-          <p>@jonatankristof0101</p>
+          <h2 id="ticket-name-card">Jonatan Kristof</h2>
+          <p id="ticket-github">@jonatankristof0101</p>
         </div>
       </div>
       <div class="ticket-tag">
@@ -102,11 +130,106 @@
 
   <!-- Generated tickets ends -->
   <footer>
+
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="https://github.com/rosendo2015">Francisco Rosendo</a>.
     </div>
   </footer>
+  <script>
+    const dropzone = document.querySelector('.dropzone');
+    const fileInput = document.getElementById('avatar-photo');
+    const previewImg = document.getElementById('dropzone-preview');
+
+    // Evita comportamento padrão
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+      dropzone.addEventListener(eventName, e => {
+        e.preventDefault();
+        e.stopPropagation();
+      });
+    });
+
+    // Destaque visual
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropzone.classList.add('highlight');
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropzone.classList.remove('highlight');
+    });
+
+    // Drop de arquivos
+    dropzone.addEventListener('drop', e => {
+      const files = e.dataTransfer.files;
+      fileInput.files = files; // sincroniza com input
+      handleFiles(files);
+    });
+
+    // Seleção manual
+    fileInput.addEventListener('change', e => {
+      handleFiles(e.target.files);
+    });
+
+    function handleFiles(files) {
+      const file = files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        previewImg.src = reader.result;
+        previewImg.style.width = '100px';
+        previewImg.style.height = '100px';
+        previewImg.style.objectFit = 'cover';
+        previewImg.style.borderRadius = '0.5rem';
+      };
+    }
+
+    const form = document.querySelector('form');
+    const ticket = document.querySelector('.Generated');
+    const heroTop = document.querySelector('.hero-top')
+
+    const fullNameInput = document.getElementById('full-name');
+    const emailInput = document.getElementById('email');
+    const githubInput = document.getElementById('github-email');
+    const avatarInput = document.getElementById('avatar-photo');
+
+    const ticketName = document.getElementById('ticket-name');
+    const ticketEmail = document.getElementById('ticket-email');
+    const ticketNameCard = document.getElementById('ticket-name-card');
+    const ticketGithub = document.getElementById('ticket-github');
+    const ticketAvatar = document.getElementById('ticket-avatar');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      // Preenche os dados
+      const name = fullNameInput.value.trim();
+      const email = emailInput.value.trim();
+      const github = githubInput.value.trim();
+      const avatarFile = avatarInput.files[0];
+
+      ticketName.textContent = name || 'Guest';
+      ticketEmail.textContent = email || 'no-email@example.com';
+      ticketNameCard.textContent = name || 'Guest';
+      ticketGithub.textContent = github || '@guest';
+
+      // Atualiza imagem do ticket
+      if (avatarFile && avatarFile.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.readAsDataURL(avatarFile);
+        reader.onloadend = () => {
+          ticketAvatar.src = reader.result;
+        };
+      }
+
+      // Oculta formulário e exibe ticket
+      form.classList.add('hide');
+      ticket.classList.remove('hide');
+      heroTop.classList.add('hide');
+    });
+
+  </script>
 </body>
 
 </html>

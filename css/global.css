@@ -74,7 +74,7 @@ header {
 .hero-top {
   margin-inline: auto;
   font-size: 20px;
-  width: 35rem;
+  max-width: 35rem;
   text-align: center;
 
   h1 {
@@ -264,14 +264,20 @@ form {
   border-left: 2px dashed #aaa;
 }
 
-footer {
+footer .attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
   width: 100%;
   text-align: center;
   bottom: 10px;
 
-  .attribution {
-    font-size: 11px;
+  a {
+    text-decoration: none;
+    font-size: 1rem;
     text-align: center;
+    color: #e16151;
   }
 
   .attribution a {
@@ -301,4 +307,55 @@ footer {
 }
 .hide {
   display: none;
+}
+@media screen and (width <= 350px) {
+  .pattern-circle1 {
+    top: -40px;
+    left: -20px;
+    width: 100px;
+  }
+  .pattern-circle2 {
+    top: 450px;
+    left: 270px;
+    width: 100px;
+  }
+  .pattern-fita1 {
+    width: 350px;
+    top: 600px;
+    left: -110px;
+  }
+  .pattern-fita2 {
+    top: -5px;
+    width: 90px;
+  }
+
+  .hero-top {
+    padding: 1rem;
+    h1 {
+      text-align: center;
+      width: 350px;
+      max-width: 100%;
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 15px;
+      line-height: 110%;
+      margin-bottom: 0;
+    }
+  }
+  form {
+    padding-inline: 1rem;
+    padding-bottom: 3rem;
+    input {
+      width: 100%;
+    }
+    button {
+      max-width: 100%;
+    }
+  }
+  footer .attribution {
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+  }
 }

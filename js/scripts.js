@@ -52,7 +52,7 @@ const dropzone = document.querySelector('.dropzone');
 
     const fullNameInput = document.getElementById('full-name');
     const emailInput = document.getElementById('email');
-    const githubInput = document.getElementById('github-email');
+    const githubInput = document.getElementById('github');
     const avatarInput = document.getElementById('avatar-photo');
 
     const ticketName = document.getElementById('ticket-name');
@@ -68,7 +68,44 @@ const dropzone = document.querySelector('.dropzone');
       const name = fullNameInput.value.trim();
       const email = emailInput.value.trim();
       const github = githubInput.value.trim();
-      const avatarFile = avatarInput.files[0];
+      const avatarFile = avatarInput.files[0];      
+      
+      
+      const errorName = document.querySelector(".errorName")
+      const errorEmail = document.querySelector(".errorEmail")
+      const errorGit = document.querySelector(".errorGit")
+      const errorDragOrange = document.querySelector(".errorDragOrange")
+      const errorDragWhite = document.querySelector(".errorDragWhite")
+      
+      if(avatarFile === avatarInput.files['']){        
+          errorDragOrange.classList.remove("hide")
+          errorDragWhite.classList.add("hide")
+          return
+        }else{
+            errorDragOrange.classList.add("hide")
+            errorDragWhite.classList.remove("hide")      
+      }
+      if(name === ""){        
+        errorName.classList.remove("hide")
+        return
+        }else{
+        errorName.classList.add("hide")      
+      }
+      if(email === ""){        
+        errorEmail.classList.remove("hide")
+        return
+         }else{
+          errorEmail.classList.add("hide")
+
+      }
+      if(github === ""){        
+        errorGit.classList.remove("hide")
+        return
+         }else{
+          errorGit.classList.add("hide")
+
+      }
+     
 
       ticketName.textContent = name || 'Guest';
       ticketEmail.textContent = email || 'no-email@example.com';

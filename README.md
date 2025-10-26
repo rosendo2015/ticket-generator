@@ -1,102 +1,78 @@
-# Frontend Mentor - Conference ticket generator
+# Frontend Mentor - Solução para o gerador de ingressos de conferência
 
-![Design preview for the Conference ticket generator coding challenge](preview.jpg)
+![preview](github/preview.jpg)
 
-## Welcome! 👋
+Esta é uma solução para o [desafio Conference ticket generator no Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de programação construindo projetos realistas.
 
-Thanks for checking out this front-end coding challenge.
+## Índice
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+- [Visão geral](#overview)
+  - [O desafio](#the-challenge)
+  - [Captura de tela](#screenshot)
+  - [Links](#links)
+- [Meu processo](#my-process)
+  - [Construído com](#built-with)
+- [Autor](#author)
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+## 🧾 Visão Geral
+O Gerador de Tickets de Conferência é uma aplicação interativa desenvolvida como parte de um desafio do Frontend Mentor. Seu objetivo é simular a experiência de inscrição em um evento, permitindo que os usuários preencham um formulário com seus dados e recebam um ticket personalizado ao final.
+Este projeto foca em acessibilidade, responsividade e validação de formulários, proporcionando uma experiência fluida e inclusiva para todos os usuários, independentemente do dispositivo ou método de navegação utilizado.
+✨ Funcionalidades principais
+- Preenchimento de formulário com nome, e-mail e upload de avatar
+- Validação em tempo real com mensagens de erro claras e acessíveis
+- Navegação 100% via teclado, com suporte a leitores de tela
+- Geração dinâmica de ticket após envio bem-sucedido
+- Layout responsivo adaptado para diferentes tamanhos de tela
+- Feedback visual em estados de foco e hover nos elementos interativos
+🎯 Objetivo do projeto
+O desafio visa aprimorar habilidades práticas em desenvolvimento front-end, com foco em:
+- Boas práticas de HTML semântico e CSS moderno
+- Criação de componentes reutilizáveis com React e Styled Components
+- Implementação de acessibilidade (A11y) e usabilidade
+- Adaptação de interfaces para dispositivos móveis (mobile-first
 
-## The challenge
+### O desafio
 
-Your challenge is to build out this conference ticket generator and get it looking as close to the design as possible.
+Os usuários devem ser capazes de:
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+- Preencher o formulário com seus dados ✅
+- Receber mensagens de validação do formulário se:
+  - Algum campo estiver em branco ✅
+  - O endereço de e-mail estiver formatado incorretamente ✅
+  - O upload do avatar for muito grande ou estiver em formato de imagem inválido ✅
+- Preencher o formulário usando apenas o teclado ✅
+- Ter os campos, dicas e mensagens de erro anunciados pelo leitor de tela ✅
+- Ver o ingresso gerado da conferência após enviar o formulário com sucesso ✅
+- Visualizar o layout ideal da interface dependendo do tamanho da tela do dispositivo ✅
+- Ver os estados de foco e hover para todos os elementos interativos da página ✅
 
-Your users should be able to: 
+### Captura de tela
+## Formulário
+![](./github/formulário.png)
 
-- Complete the form with their details
-- Receive form validation messages if:
-  - Any field is missed
-  - The email address is not formatted correctly
-  - The avatar upload is too big or the wrong image format
-- Complete the form only using their keyboard
-- Have inputs, form field hints, and error messages announced on their screen reader
-- See the generated conference ticket when they successfully submit the form
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+## Ticket
+![](./github/ticket.png)
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Links
 
-## Where to find everything
+- URL da solução: [github.com/ticket-generator](https://github.com/rosendo2015/ticket-generator)
+- URL do site ao vivo: [ticket-generator.vercel.app](https://ticket-generator-eight-ebon.vercel.app/)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+## Meu processo
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Construído com
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Marcação HTML5 semântica
+- Propriedades personalizadas CSS
+- Flexbox
+- CSS Grid
+- Fluxo de trabalho mobile-first
+- [React](https://reactjs.org/) - biblioteca JS
+- [Next.js](https://nextjs.org/) - framework React
+- [Styled Components](https://styled-components.com/) - para estilos
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+## Autor
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
-
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
-
-## Building your project
-
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
-
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
-
-## Deploying your project
-
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- Frontend Mentor - [@rosendo2015](https://www.frontendmentor.io/profile/rosendo2015)
+- Twitter - [@Rosendo92671729](https://x.com/Rosendo92671729)
+- Linkedin - [@Rosendo92671729](https://www.linkedin.com/in/francisco-rosendo-coelho/)

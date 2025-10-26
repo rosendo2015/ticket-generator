@@ -110,7 +110,7 @@ form {
   margin-inline: auto;
   margin-block: 1rem 3rem;
   width: 20rem;
-
+  padding-bottom: 3rem;
   label {
     font-size: 14px;
     margin-block: 1rem 0.5rem;
@@ -345,7 +345,7 @@ footer .attribution {
   }
   form {
     padding-inline: 1rem;
-    padding-bottom: 3rem;
+
     input {
       width: 100%;
     }

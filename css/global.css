@@ -16,6 +16,7 @@
 
   font-family: "Inconsolata", monospace;
 }
+/* Estilo base: Mobile (até 599px) */
 #app {
   width: 100vw;
   height: 100vh;
@@ -26,42 +27,47 @@
   background-image: url(../assets/images/pattern-lines.svg);
   pointer-events: none;
 }
-.pattern-circle1 {
-  position: absolute;
-  top: -100px;
-  left: 100px;
-}
-.pattern-circle2 {
-  width: 150px;
-  position: absolute;
-  top: 400px;
-  left: 920px;
-}
-.pattern-fita1 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-.pattern-fita2 {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
 body {
   overflow-x: hidden;
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url("../assets/images/background-desktop.png");
-  background-repeat: no-repeat;
-  background-size: cover auto;
+  background: url("../assets/images/background-mobile.png");
+  background-size: cover;
   background-position: top center;
   font-family: "Inconsolata", monospace;
   color: var(--neutral-0);
 }
+.pattern-circle1,
+.pattern-circle2,
+.pattern-fita1,
+.pattern-fita2 {
+  position: absolute;
+  top: -100px;
+  left: 100px;
+}
 
+.pattern-circle1 {
+  top: -40px;
+  left: -20px;
+  width: 100px;
+}
+.pattern-circle2 {
+  top: 450px;
+  left: 270px;
+  width: 100px;
+}
+.pattern-fita1 {
+  width: 350px;
+  top: 600px;
+  left: -110px;
+}
+.pattern-fita2 {
+  top: -5px;
+  width: 90px;
+}
 header {
-  margin-block: 1.5rem 2rem;
+  margin-block: 1.5rem 1rem;
   margin-inline: auto;
   text-align: center;
 
@@ -70,6 +76,20 @@ header {
   }
 }
 
+.hero-top {
+  padding: 1rem;
+  h1 {
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 15px;
+    line-height: 110%;
+    margin-bottom: 0;
+  }
+}
 .hero,
 .hero-top {
   margin-inline: auto;
@@ -78,14 +98,14 @@ header {
   text-align: center;
 
   h1 {
-    margin-block: 3rem 1.5rem;
+    margin-inline: auto;
+    margin-block: 1rem 1rem;
   }
 
   p {
     margin-inline: auto;
     font-size: 14px;
     color: var(--neutral-300);
-    margin-bottom: 3rem;
   }
 
   .hero-detail {
@@ -109,14 +129,15 @@ form {
   z-index: 10;
   margin-inline: auto;
   margin-block: 1rem 3rem;
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
   padding-bottom: 3rem;
+  padding-inline: 1rem;
   label {
     font-size: 14px;
     margin-block: 1rem 0.5rem;
     display: block;
   }
-
   input {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -265,9 +286,10 @@ form {
 }
 
 footer .attribution {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   position: fixed;
   width: 100%;
   text-align: center;
@@ -284,6 +306,7 @@ footer .attribution {
     color: hsl(228, 45%, 44%);
   }
 }
+
 .error,
 .errorDragOrange {
   display: flex;
@@ -308,54 +331,57 @@ footer .attribution {
 .hide {
   display: none;
 }
-@media screen and (width <= 350px) {
+
+/* Tablet (600px a 1023px) */
+@media (min-width: 600px) and (max-width: 1023px) {
+  body {
+    background: url(../assets/images/background-tablet.png);
+    background-size: cover;
+    background-position: top center;
+  }
+  .hide {
+    display: none;
+  }
+}
+
+/* Desktop (1024px ou mais) */
+@media (min-width: 1024px) {
   .pattern-circle1 {
-    top: -40px;
-    left: -20px;
-    width: 100px;
+    position: absolute;
+    top: -100px;
+    left: 100px;
   }
   .pattern-circle2 {
-    top: 450px;
-    left: 270px;
-    width: 100px;
+    width: 150px;
+    position: absolute;
+    top: 400px;
+    left: 920px;
   }
   .pattern-fita1 {
-    width: 350px;
-    top: 600px;
-    left: -110px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
   .pattern-fita2 {
-    top: -5px;
-    width: 90px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  body {
+    background: url("../assets/images/background-desktop.png");
+    background-size: cover;
+    background-position: top center;
   }
 
-  .hero-top {
-    padding: 1rem;
-    h1 {
-      text-align: center;
-      width: 350px;
-      max-width: 100%;
-      font-size: 1.5rem;
-    }
-    p {
-      font-size: 15px;
-      line-height: 110%;
-      margin-bottom: 0;
-    }
-  }
-  form {
-    padding-inline: 1rem;
-
-    input {
-      width: 100%;
-    }
-    button {
-      max-width: 100%;
-    }
-  }
   footer .attribution {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     bottom: 0;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .hide {
+    display: none;
   }
 }

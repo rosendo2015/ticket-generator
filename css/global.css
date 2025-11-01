@@ -364,6 +364,7 @@ footer .attribution {
     background-position: top center;
   }
   .hero {
+    padding-inline: 3rem;
     h1 {
       font-size: 40px;
       margin-block: 2rem 2rem;

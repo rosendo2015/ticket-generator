@@ -127,10 +127,4 @@ const dropzone = document.querySelector('.dropzone');
       heroTop.classList.add('hide');
     });
 
-    let dateDay = new Date().getDay()
-    let dateMes = new Date().getMonth()
-    let dateAno = new Date().getFullYear()
-
-    console.log(dateDay);
-    console.log(dateMes);
-    console.log(dateAno);
+  
